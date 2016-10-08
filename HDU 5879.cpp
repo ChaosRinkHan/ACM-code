@@ -9,7 +9,7 @@ const int N = 1e6 + 5;
 char a[N];
 double sum[N];
 
-void yu()
+void ini() //初始化数组
 {
     for(int i = 1 ; i < N ; i++){
         sum[i] = sum[i - 1] + (double)1/i/i;
@@ -17,9 +17,9 @@ void yu()
 }
 int main()
 {
-    yu();
+    ini(); //打表
     while(~scanf("%s",a)){
-        int l = strlen(a);
+        int l = strlen(a); //注意使用字符串格式输入
         if(l >= 7) printf("%.5lf\n",sum[1000000]);
         else{
             int n = 0;
